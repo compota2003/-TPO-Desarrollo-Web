@@ -1,0 +1,92 @@
+    /* Estilos comunes */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #2aacb8;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      
+      
+      .logo{
+        height: 40px;
+        }
+      
+      /* Estilos móvil/celular */
+      @media all and (max-width: 700px) {
+  
+        /* Oculta el nav en la parte izquiera */
+        .nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background:olivedrab;
+          grid-template: 20%,40;
+          transform: translateX(-100vw);
+          transition: 0.5s;
+        }
+  
+        /* Muestra el nav */
+        .nav--show {
+          transform: translateX(0);
+        }
+  
+        .nav__button {
+          text-align: right;
+          margin: 1rem;
+        }
+  
+        .nav__ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+  
+        .nav__link {
+          display:grid;
+          padding: 0.3rem;
+          font-size: 1.3rem;
+          text-align: center;
+          text-decoration: none;
+          color: black;
+        }
+      }
+  
+      /* Estilos Escritorio */
+      @media all and (min-width: 701px) {
+  
+        /* Oculta botón de abrir o cerrar */
+        .nav__button,
+        .header__button-nav--open {
+          display:none;
+        }
+  
+        /* Adapta el nav en horizontal */
+        .nav__ul {
+          display: flex;
+          list-style: none;
+          padding: 0;
+        }
+  
+        .nav__link {
+          display:grid ;
+          display:inline-table;
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          color: black;
+          transition: 0.5s;
+        }
+  
+        .nav__link:hover {
+          box-shadow: inset 100px 0 0 0 #54b3d6;
+          color: rgb(147, 205, 46);
+          opacity: 0.5;
+        }
+      }
