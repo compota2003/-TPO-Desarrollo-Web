@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- js para el uso del menú contextual -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+    
+        <!-- icono del sitio (una dona) -->
+        <link rel="icon" type="image/jpg" href="img/ico.png">
+    
+        <!-- hojas de estilo -->
+        <link rel="stylesheet" href="estilo_betum.css">
+        <link rel="stylesheet" href="estilo_betum_menu.css">
+    
+        <title>BETUM | Recetas</title>
+    </head>
+
+<body>
+    <div class="container">
+
+        <!-- Contenido del header -->
+        <div class="item header">
+
+            <!-- MENU -->
+            <header x-data="{ open: false }" class="header">
+
+                <!-- Logo del encabezado-->
+                <div class="header__logo">
+                    <img src="img/logo.jpg" alt="" class="logo">
+                </div>
+
+                <!-- imagen hamburguesa abrir-->
+                <button class="header__button-nav--open" x-on:click="open = true">
+                    <label for="toggle">&#9776</label>
+                </button>
+
+                <!-- Menu contextual -->
+                <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+
+                    <!-- imagen hamburguesa cerrar-->
+                    <div class="nav__button" x-on:click="open = false">
+                        <button class="header__button-nav--close">
+                            <label for="toggle">&#9886</label>
+                        </button>
+                    </div>
+
+                    <!-- Menu horizontal-->
+                    <ul class="nav__ul">
+                        <li class="nav__item"><a href="inicio.html" class="nav__link">Inicio</a> </li>
+                        <li class="nav__item"><a href="recetas.html" class="nav__link">Recetas</a></li>
+                        <li class="nav__item"><a href="sucursales.html" class="nav__link">Sucursales</a></li>
+                        <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                    </ul>
+
+                </nav>
+
+                <!-- FIN DEL MENU -->
+            </header>
+
+            <!-- fin del item header  -->
+        </div>
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido principal -->
+        <!-- ************************************************ -->
+        <div class="item contenido">
+            <p class="nombre"><b>La mejor receta con el mejor café!!!</b></p>
+
+            <p>
+                <b> Paso 1 </b>
+                <br>
+                En un bowl, colocar la manteca a temperatura ambiente con el azúcar y batir. Agregar los huevos, de a
+                uno por vez, sumar la esencia de vainilla y la ralladura de limón.
+                <br>
+                <b> Paso 2 </b>
+                <br>
+                Tamizar la harina, la sal y el polvo para hornear e incorporarlos a la mezcla anterior. Sumar la leche y
+                mezclar.
+                <br>
+                <b> Paso 3 </b>
+                <br>
+                Disponer la mezcla en 12 pirotines y cocinarlos en el horno precalentado, a 180° (moderado) de 18 a 20
+                minutos. Retirar y reservar.
+                <br>
+                <b> Paso 4 </b>
+                <br>
+                Para la cobertura, en un bowl, batir la manteca a temperatura ambiente hasta que este cremosa. Agregar
+                la crema y la esencia de vainilla. Bajar la velocidad e incorporar el azúcar impalpable de a poco .
+                <br>
+                <b> Paso 5 </b>
+                <br>
+                Si se quiere una cubierta de varios colores, dividir la crema en pequeños bowls y sumar el colorante en
+                pasta a elección en cada uno. Mezclar. Colocar la mezcla en una manga (o varias) con pico de repostería
+                rizado o liso y decorar los cupcakes con el frosting, haciendo copos o la figura que le guste y sumar
+                las granas o golosinas, formando el decorado que quiera.
+            </p>
+
+
+            <!-- ************************************************ -->
+            <!-- CONSUMO DE API (preparación de CAFE) -->
+            <!-- ************************************************ -->
+
+            <div id="app">
+                <h3>Elije tu café</h3>
+                <p>
+
+                    <label for="">Buscar un café:</label>
+                    <select v-model="CUR" name="CUR" id="">
+                        <option id="CUR" v-for="CUR of CURs">{{CUR}}</option>
+                    </select>
+                    <!-- <p>  </p> -->
+                    <button class="miboton" v-on:click="filtro()">Buscar</button>
+
+                </p>
+                <!-- <br> -->
+
+                <!-- puedo poner luego de "elemento." la clave del json-->
+
+                <div>
+                    <div v-for="elemento of REC">
+
+                        <center>
+                            <img :src="elemento.image" :alt="elemento.title">
+
+                            <div>
+
+                                <!-- KEY DEL JSON                 -->
+
+                                <h2 class="card-text">{{elemento.title}}</h2>
+                                <p class="card-text"><b>Descripción:</b></p>{{elemento.description}}</p>
+
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VUE -->
+            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+            <!-- SCRIPT DE LA INSTANCIA DE VUE -->
+            <script src="js/api.js"></script>
+
+
+        </div>
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido del panel de la derecha -->
+        <!-- ************************************************ -->
+        <div class="item der">
+            <img class="retrato" src="img/cupcakes.jpg" alt="" width="35vw" height="300vh">
+        </div>
+
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido del panel del footer -->
+        <!-- ************************************************ -->
+
+        <div class="item pie">
+            <footer class="footer">
+                <div class="redes-footer">
+                    <a href="https://www.instagram.com/betular.patisserie/" target="_blank"><img class="icon-footer"
+                            src="img/logotipo-de-instagram.png" alt="Instagram"></a>
+
+                    <a href="https://www.facebook.com/Betular-Patisserie-106195078903689" target="_blank"><img
+                            class="icon-footer" src="img/facebook.png" alt="Facebook"></a>
+
+                    <a href="mailto:clasesdehernan@hotmail.com" target="_blank"><img class="icon-footer"
+                            src="img/correo-electronico.png" alt="Correo"></a>
+                </div>
+                <div>
+                    <h4 class="copyright">Copyright 2022© Betum - Todos los Derechos Reservados.</h4>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

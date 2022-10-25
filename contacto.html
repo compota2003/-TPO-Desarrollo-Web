@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- js para el uso del menú contextual -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     
+        <!-- icono del sitio (una dona) -->
+        <link rel="icon" type="image/jpg" href="img/ico.png">
+
+        <!-- hojas de estilo -->
+        <link rel="stylesheet" href="estilo_betum_form.css">
+        <link rel="stylesheet" href="estilo_betum_menu.css">
+
+        <!-- estilo del cartel de envío del formulario OK -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <title>Betular | Contacto</title>
+
+
+    </head>
+
+    <body>
+        <div class="container">
+    
+            <!-- Contenido del header -->
+            <div class="item header">
+    
+                <!-- MENU -->
+                <header x-data="{ open: false }" class="header">
+    
+                    <!-- Logo del encabezado-->
+                    <div class="header__logo">
+                        <img src="img/logo.jpg" alt="" class="logo">
+                    </div>
+    
+                    <!-- imagen hamburguesa abrir-->
+                    <button class="header__button-nav--open" x-on:click="open = true">
+                        <label for="toggle">&#9776</label>
+                    </button>
+    
+                    <!-- Menu contextual -->
+                    <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+    
+                        <!-- imagen hamburguesa cerrar-->
+                        <div class="nav__button" x-on:click="open = false">
+                            <button class="header__button-nav--close">
+                                <label for="toggle">&#9886</label>
+                            </button>
+                        </div>
+    
+                        <!-- Menu horizontal-->
+                        <ul class="nav__ul">
+                            <li class="nav__item"><a href="inicio.html" class="nav__link">Inicio</a> </li>
+                            <li class="nav__item"><a href="recetas.html" class="nav__link">Recetas</a></li>
+                            <li class="nav__item"><a href="sucursales.html" class="nav__link">Sucursales</a></li>
+                            <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                        </ul>
+    
+                    </nav>
+    
+                    <!-- FIN DEL MENU -->
+                </header>
+    
+                <!-- fin del item header  -->
+            </div>
+    
+
+        <!-- ************************************************ -->
+        <!-- Contenido principal -->
+        <!-- ************************************************ -->
+        <div class="item contenido">
+            <div class="form-estilo">
+
+
+                <!-- ********************************************** -->
+                <!-- se usa el servicio de formspreep para el formulario -->
+                <!-- ********************************************** -->
+
+                <form id="form" role="form"
+                action="https://formspree.io/f/xknebeng"
+                method="POST">
+                
+                    <fieldset>
+                        <legend><b>FORMULARIO DE CONTACTO</b></legend>
+                        <br>
+
+                        <!-- ********************************************** -->
+                        <!-- nombre -->
+                        <!-- ********************************************** -->
+                        <div >
+                            <label for="name_id" class="control-label">
+                                Nombre
+                            </label>
+
+                            <input type="text" 
+                                id="name_id" 
+                                name="name" 
+                                placeholder="ingresa tu nombre" required
+                            >
+                        </div>
+
+
+                        <!-- ********************************************** -->
+                        <!-- emails -->
+                        <!-- ********************************************** -->
+                        
+                        <div >
+                            <label for="full_name_id" class="control-label">
+                                Email
+                            </label>
+
+                            <input type="email" 
+                                size="32" 
+                                minlength="3" 
+                                maxlength="64" 
+                                id="full_name_id" 
+                                name="full_name" 
+                                placeholder="nombre@servidor.com" required>
+                        </div>
+
+
+                        <!-- ********************************************** -->
+                        <!-- calle -->
+                        <!-- ********************************************** -->
+                        
+                        <div >
+                            <label for="street_id" class="control-label">
+                                Dirección
+                            </label>
+
+                            <input type="text" 
+                                id="street_id" 
+                                name="street" 
+                                placeholder="ingresa tu dirección">
+                        </div>
+
+
+                        <!-- ********************************************** -->
+                        <!-- provincia -->
+                        <!-- ********************************************** -->
+                       
+                        <div >
+                            <label for="state_id" class="control-label">
+                                Provincia
+                            </label>
+
+                            <select  id="state_id">
+                                <option value="1">Buenos Aires</option>
+                                <option value="2">Catamarca</option>
+                                <option value="5">Chaco</option>
+                                <option value="6">Chubut</option>
+                                <option value="50">Ciudad Autónima de Bs As</option>
+                                <option value="3">Córdoba</option>
+                                <option value="4">Corrientes</option>
+                                <option value="7">Entre Ríos</option>
+                                <option value="8">Formosa</option>
+                                <option value="9">Jujuy</option>
+                                <option value="10">La Pampa</option>
+                                <option value="11">La Rioja</option>
+                                <option value="12">Mendoza</option>
+                                <option value="13">Misiones</option>
+                                <option value="14">Neuquén</option>
+                                <option value="15">Río Negro</option>
+                                <option value="16">Salta</option>
+                                <option value="17">San Luis</option>
+                                <option value="19">Santa Cruz</option>
+                                <option value="20">Santa Fé</option>
+                                <option value="21">Santiago del Estero</option>
+                                <option value="22">Tierra del Fuego</option>
+                            </select>
+                        </div>
+
+
+                        <!-- ********************************************** -->
+                        <!-- ciudad -->
+                        <!-- ********************************************** -->
+
+                        <div >
+                            <label for="city_id" class="control-label">
+                                Ciudad
+                            </label>
+                            
+                            <input type="text" 
+                                id="city_id" 
+                                name="city" 
+                                placeholder="ingresa tu ciudad">
+                        </div>
+
+
+                        <!-- ********************************************** -->
+                        <!-- código postal -->
+                        <!-- ********************************************** -->
+
+                        <div >
+                            <label for="zip_id" class="control-label">
+                                Código postal
+                            </label>
+
+                            <input type="text" 
+                                id="zip_id" 
+                                name="zip" 
+                                placeholder="#####">
+                        </div>
+
+                        <br>
+                        <div >
+                            <!-- Submit Button -->
+                            <center>
+                            <button type="submit" class="miboton">Enviar</button>
+                            </center>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        
+        <!-- Evitar la redirección del servicio  -->
+        <!--  formspree para envío de form x email -->        
+        <script>
+            const $form = document.querySelector('#form')
+            
+            $form.addEventListener('submit', handleSubmit)
+            
+            async function handleSubmit (event) {
+                event.preventDefault()
+                const form = new FormData (this)
+                const response = await fetch(this.action, {
+                    method: this.method,
+                    body: form,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                if (response.ok) {
+                    this.reset()
+                    // alert('Gracias!')
+                    swal("¡Bien!", "Tus datos fueron enviados correctamente :)", "success");
+                }
+            }
+            </script>
+
+        <!-- ************************************************ -->
+        <!-- Contenido del panel del footer -->
+        <!-- ************************************************ -->
+
+        <div class="item pie">
+            <footer class="footer">
+                <div class="redes-footer">
+                    <a href="https://www.instagram.com/betular.patisserie/" target="_blank"><img class="icon-footer"
+                            src="img/logotipo-de-instagram.png" alt="Instagram"></a>
+
+                    <a href="https://www.facebook.com/Betular-Patisserie-106195078903689" target="_blank"><img
+                            class="icon-footer" src="img/facebook.png" alt="Facebook"></a>
+
+                    <a href="mailto:clasesdehernan@hotmail.com" target="_blank"><img class="icon-footer"
+                            src="img/correo-electronico.png" alt="Correo"></a>
+                </div>
+                <div>
+                    <h4 class="copyright">Copyright 2022© Betum - Todos los Derechos Reservados.</h4>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>

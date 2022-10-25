@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- js para el uso del menú contextual -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
+    
+        <!-- icono del sitio (una dona) -->
+        <link rel="icon" type="image/jpg" href="img/ico.png">
+    
+        <!-- hojas de estilo -->
+        <link rel="stylesheet" href="estilo_betum.css">
+        <link rel="stylesheet" href="estilo_betum_menu.css">
+    
+        <title>BETUM | Sucursales</title>
+    </head>
+
+
+<body>
+    <div class="container">
+
+        <!-- Contenido del header -->
+        <div class="item header">
+
+            <!-- MENU -->
+            <header x-data="{ open: false }" class="header">
+
+                <!-- Logo del encabezado-->
+                <div class="header__logo">
+                    <img src="img/logo.jpg" alt="" class="logo">
+                </div>
+
+                <!-- imagen hamburguesa abrir-->
+                <button class="header__button-nav--open" x-on:click="open = true">
+                    <label for="toggle">&#9776</label>
+                </button>
+
+                <!-- Menu contextual -->
+                <nav class="nav" x-bind:class="open ? 'nav--show' : ''">
+
+                    <!-- imagen hamburguesa cerrar-->
+                    <div class="nav__button" x-on:click="open = false">
+                        <button class="header__button-nav--close">
+                            <label for="toggle">&#9886</label>
+                        </button>
+                    </div>
+
+                    <!-- Menu horizontal-->
+                    <ul class="nav__ul">
+                        <li class="nav__item"><a href="inicio.html" class="nav__link">Inicio</a> </li>
+                        <li class="nav__item"><a href="recetas.html" class="nav__link">Recetas</a></li>
+                        <li class="nav__item"><a href="sucursales.html" class="nav__link">Sucursales</a></li>
+                        <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+                    </ul>
+
+                </nav>
+
+                <!-- FIN DEL MENU -->
+            </header>
+
+            <!-- fin del item header  -->
+        </div>
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido principal -->
+        <!-- ************************************************ -->
+        <div class="item contenido">
+            <p>Como llegar ...</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.114788365729!2d-58.51425968508681!3d-34.60125876487434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb72b303949e5%3A0x9edab5b0fcaf4ecd!2sBetular%20P%C3%A2tisserie!5e0!3m2!1ses-419!2sar!4v1664059062044!5m2!1ses-419!2sar"
+                height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido del panel de la derecha -->
+        <!-- ************************************************ -->
+        <div class="item der">
+            <p><b>Sucursal Devoto</b></p>
+            <img height="300" src="img/betular_frente_local.jpeg" alt="betular_frente_local" />
+            <p>Mercedes 3900, Villa Devoto CABA</p>
+            <p>Horarios Martes a Domingo de 9:00 a 20:00hs</p>
+        </div>
+
+
+        <!-- ************************************************ -->
+        <!-- Contenido del panel del footer -->
+        <!-- ************************************************ -->
+
+        <div class="item pie">
+            <footer class="footer">
+                <div class="redes-footer">
+                    <a href="https://www.instagram.com/betular.patisserie/" target="_blank"><img class="icon-footer"
+                            src="img/logotipo-de-instagram.png" alt="Instagram"></a>
+
+                    <a href="https://www.facebook.com/Betular-Patisserie-106195078903689" target="_blank"><img
+                            class="icon-footer" src="img/facebook.png" alt="Facebook"></a>
+
+                    <a href="mailto:clasesdehernan@hotmail.com" target="_blank"><img class="icon-footer"
+                            src="img/correo-electronico.png" alt="Correo"></a>
+                </div>
+                <div>
+                    <h4 class="copyright">Copyright 2022© Betum - Todos los Derechos Reservados.</h4>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
